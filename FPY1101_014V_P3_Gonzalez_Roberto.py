@@ -130,21 +130,29 @@ def imprimir_certificado(datos):
             print("Seleccione un certificado")
         elif vopcion==1:
             bus_patente=input("Ingrese patente para buscar los datos del vehiculo: ")
-            if bus_patente==patente:
-                patente_vehiculo=[vehiculo for vehiculo in datos if vehiculo["Patente"]==bus_patente]
-                print(f'Emision de Contaminantes: {vehiculo["Patente"]} {vehiculo["Dueño"]} {vehiculo["RUN"]}')
+            for vehiculo in datos:
+                if vehiculo["Patente"]==bus_patente:
+                    print(f'Emision de Contaminantes: {vehiculo["Patente"]} {vehiculo["Dueño"]} {vehiculo["RUN"]}')
+                else:
+                    print("Vehiculo no existe")
+                break
+                
                 break
         elif vopcion==2:
             bus_patente=input("Ingrese patente para buscar los datos del vehiculo: ")
-            if bus_patente==patente:
-                patente_vehiculo=[vehiculo for vehiculo in datos if vehiculo["Patente"]==bus_patente]
-                print(f'Anotaciones Vigentes: {vehiculo["Patente"]} {vehiculo["Dueño"]} {vehiculo["RUN"]}')
+            for vehiculo in datos:
+                if vehiculo["Patente"]==bus_patente:
+                    print(f'Anotaciones vigentes: {vehiculo["Patente"]} {vehiculo["Dueño"]} {vehiculo["RUN"]}')
+                else:
+                    print("Vehiculo no existe")
                 break
         elif vopcion==3:
             bus_patente=input("Ingrese patente para buscar los datos del vehiculo: ")
-            if bus_patente==patente:
-                patente_vehiculo=[vehiculo for vehiculo in datos if vehiculo["Patente"]==bus_patente]
-                print(f'Multas: {vehiculo["Patente"]} {vehiculo["Dueño"]} {vehiculo["RUN"]}')
+            for vehiculo in datos:
+                if vehiculo["Patente"]==bus_patente:
+                    print(f'Multas: {vehiculo["Patente"]} {vehiculo["Dueño"]} {vehiculo["RUN"]}')
+                else:
+                    print("Vehiculo no existe")
                 break
 
 
